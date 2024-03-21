@@ -10,18 +10,10 @@ public class DrawLine : MonoBehaviour
     private EdgeCollider2D edgeCollider;
     public GameObject lineMesh;
     Mesh mesh;
-    public float width;
 
     private void Start()
     {
         mesh = new Mesh();
-    }
-
-    public void StartLine(Vector2 position)
-    {
-        lineRender = GetComponent<LineRenderer>();
-        lineRender.positionCount = 1;
-        lineRender.startWidth = lineRender.endWidth = width;
     }
 
     private void CreateLine()
@@ -58,7 +50,6 @@ public class DrawLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //crear bool en falso para revisar que la linea no se haya.
         if (Input.GetMouseButtonDown(0))
         {
             CreateLine();
